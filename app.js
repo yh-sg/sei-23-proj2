@@ -24,9 +24,12 @@ app.use(express.urlencoded({ extended: true })); //collects form data
 app.set("view engine", "ejs"); //view engine setup
 app.use(expressLayouts); //Express EJS layout to make views into block
 
-app.get("/", (req,res) => {
-    res.send("Hi");
-});
+// app.get("/", (req,res) => {
+//     res.send("Hi");
+// });
+
+app.use("/", require("./routes/post.route"));
+app.use("/list", require("./routes/list.route"));
 
 app.listen(process.env.PORT,()=>{
     console.log(`app running on ${process.env.PORT}`);
