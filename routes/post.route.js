@@ -24,7 +24,11 @@ router.get("/", async (req, res) => {
 
 
 router.get("/compose", (req,res)=>{
+  if(req.user){
     res.render("post/compose");
+  }else{
+    res.redirect("auth/login");
+  }
 });
 
 //create
@@ -41,7 +45,7 @@ router.post("/compose", async (req,res)=>{
     let savedPost = await post.save();
 
     if (savedPost) {
-      let userUpadate = await User.findByIdAndUpdate(req.user._id, { $push : { posts : post._id }})
+      //let userUpdate = await User.findByIdAndUpdate(req.user._id, { $push : { posts : post._id }})
 
       res.redirect("/");
     }
@@ -86,3 +90,8 @@ router.post("/update/:id", (req,res)=>{
 });
 
 module.exports = router;
+
+
+
+
+/*************** LIST ****************/ 

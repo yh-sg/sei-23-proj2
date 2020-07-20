@@ -5,10 +5,14 @@ const Post = require("../models/post.model");
 //go to the list page
 router.get("/", async (req, res) => {
     try {
-      let lists = await List.find();
+      if(req.user){
+      let lists = await List.find({toDoBy : req.user._id});
   
       // console.log(lists);
       res.render("list/list",{lists});
+    }else{
+      res.redirect("/auth/login");
+    }
     } catch (error) {
       console.log(error);
     }
@@ -18,7 +22,7 @@ router.get("/", async (req, res) => {
 // Create
 router.post("/", (req,res)=>{
   const listName = req.body.newList;
-  const list = new List({name: listName})
+  const list = new List({name: listName, toDoBy: req.user._id})
 
   list.save();
   res.redirect("/list");

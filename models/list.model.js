@@ -7,22 +7,16 @@ const listSchema = Schema(
           type: String,
           require: true
         },
-      // priority: {
-      //     type: Number,
-      //     require: [true, "Please input data priority level"],
-      //     min: 1,
-      //     max: 5
-      // },
-      // dueDate: Date,
-      // status: {
-      //     type: String,
-      //     enum: ["nil", "inprogress", "done"]
-      // },
-    //   users: [
-    //     {
-    //       type: mongoose.Schema.Types.ObjectId,
-    //       ref: "Users",
-    //     }],
+      toDoBy: 
+        {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "User",
+        },
+      // post: [
+      //   {
+      //     type: mongoose.Schema.Types.ObjectId,
+      //     ref: "Post",
+      //   }],
     });
   
   const List = mongoose.model("List", listSchema);

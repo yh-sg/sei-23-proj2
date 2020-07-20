@@ -5,7 +5,7 @@
       <form action="/list/delete" method="post">
       <div class="item">
         <input type="checkbox" name="checkbox" value="<%=list._id%>" onChange="this.form.submit()">
-        <p><a href="/list/read/<%= list._id %>"><%=list.name%></a></p>
+        <p><%=list.name%></p>
       </div>
     </form>
       <% }) %>

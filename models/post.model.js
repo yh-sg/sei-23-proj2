@@ -7,6 +7,10 @@ const postSchema = Schema(
       type: String,
       require: true
     },
+    name: {
+      type: String,
+      require: true
+    },
     content: {
       type: String,
       require: true
