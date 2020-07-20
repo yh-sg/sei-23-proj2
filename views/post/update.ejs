@@ -6,5 +6,11 @@
     <label>Post</label>
     <textarea class="form-control" name="content" rows="5" cols="30"><%=post.content%></textarea>
   </div>
+  <div>
+    <label>Status</label>
+    <input name="status" type="radio" value="Nil" /> Nil
+    <input name="status" type="radio" value="In Progress" /> InProgress
+    <input name="status" type="radio" value="Done" /> Done
+  </div>
   <button class="btn btn-primary" type="submit">Update</button>
 </form>
