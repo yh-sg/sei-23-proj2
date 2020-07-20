@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const List = require("../models/list.model");
-//const Post = require("../models/post.model");
+const Post = require("../models/post.model");
 
 //go to the list page
 router.get("/", async (req, res) => {
@@ -22,20 +22,6 @@ router.post("/", (req,res)=>{
 
   list.save();
   res.redirect("/list");
-});
-
-// Read
-router.get("/read/:id", (req,res)=>{
-  console.log(req.params.id);
-
-  List.findById(req.params.id)
-  .then(list => {
-      //console.log(fruit);
-      res.render("list/read", list);
-  })
-  .catch((err)=>{
-      console.log(err);
-  })
 });
 
 // Delete
