@@ -1,6 +1,9 @@
 const router = require("express").Router();
 const Post = require("../models/post.model");
 const User = require("../models/user.model");
+const methodOverride = require('method-override');
+
+router.use(methodOverride('_method'));
 
 router.get("/", async (req, res) => {
   
@@ -91,7 +94,16 @@ router.post("/update/:id", (req,res)=>{
 
 module.exports = router;
 
-
-
-
+// Delete
+router.delete("/remove/:id", (req,res)=>{
+  console.log(req.body);
+  
+  Post.findByIdAndDelete(req.params.id)
+  .then(()=>{
+      res.redirect("/");
+  })
+  .catch((err)=>{
+      console.log(err);
+  });
+});
 /*************** LIST ****************/ 

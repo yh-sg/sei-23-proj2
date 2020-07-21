@@ -1,0 +1,92 @@
+/************ Overall **************/
+
+h1,h2{
+    margin-top: 15px;
+}
+
+p, label{
+    padding: 5px 0;
+}
+
+.navbar {
+    padding: 20px 0;
+    border: 0;
+    letter-spacing: 2px;
+}
+
+
+/************ POST **************/
+/* used bootstrap container */
+
+
+/************ LIST **************/
+.heading{
+    background-color: rgb(53, 76, 207) !important;
+    text-align: center;
+    padding: 2px 0;
+}
+
+.heading > h2{
+    border: 0;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.box {
+    max-width: 500px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+  }
+
+  .todolist {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #F1F1F1;
+  }
+
+  input[type="checkbox"]{
+      margin: 20px 0 20px 20px;
+  }
+
+  .todolist > p {
+    margin: 0;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 200;
+    color: #00204a;
+  }
+
+  .todolist > input[type="text"] {
+    text-align: center;
+    height: 60px;
+    top: 10px;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    font-weight: 200;
+    width: 430px;
+  }
+
+  input:checked+p {
+    text-decoration: line-through;
+    text-decoration-color: rgb(53, 76, 207);
+  }
+
+  .todolist > input[type="text"]:focus {
+    outline: none;
+    box-shadow: inset 0 -5px 0 0 rgb(53, 76, 207);
+  }
+
+  .listbutton{
+    width: 50px;
+    border-radius: 50%;
+    border-color: transparent;
+    background-color: rgb(53, 76, 207);
+    color: #fff;
+    font-size: 30px;
+    padding-bottom: 5px;
+    border-width: 0;
+  }

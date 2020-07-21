@@ -1,6 +1,11 @@
+<div class="container">
 <h1><%=title%></h1>
 <p><%=content%></p>
-<a href="/update/<%= _id %>">Update</a>
+<% if(currentUser) {%>
+<a href="/update/<%= _id %>">Update </a>
+<a href="/remove/<%= _id %>">Delete</a>
+<% } %>
 <p>Written by: <%= writtenBy.name %>  </p>
 <p>Status: <%=status%></p>
 <p><%=createdDate%></p>
+</div>

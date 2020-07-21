@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Sei Proj 2</title>
 </head>
 <body>
@@ -15,7 +16,8 @@
       <%= message %>
     </div>
     <%}) } %>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -26,7 +28,7 @@
               <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/list">Lists</a>
+              <a class="nav-link" href="/list">To Do Lists</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/compose">Compose</a>
@@ -45,7 +47,8 @@
               <a class="nav-link" href="/auth/register">Signup</a>
             </form>
         </div>
-      </nav>
+      </div>
+    </nav>
     <%- body %> 
 </body>
 </html>

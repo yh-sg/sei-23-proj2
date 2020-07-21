@@ -35,7 +35,7 @@ router.post("/delete", (req,res)=>{
   
   List.findByIdAndRemove(checkedItemId, (err)=>{
     if(!err){
-      console.log("Successfully deleted checked items.");
+      //console.log("Successfully deleted checked items.");
       res.redirect("/list");
     }
   });
