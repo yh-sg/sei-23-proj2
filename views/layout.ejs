@@ -1,9 +1,28 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>tinymce.init({
+    selector: "#editor",
+    plugins: [
+        "advlist autolink lists link image charmap print preview anchor",
+        "searchreplace visualblocks code fullscreen",
+        "code insertdatetime media table contextmenu paste"
+    ],
+    toolbar: "code insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+	setup: function (editor) {
+	  editor.on('init', function (e) {
+		var x = editor.getContent({format: 'text'})
+		var y = editor.getContent()
+	  });
+	}
+});
+</script>
     <title>Sei Proj 2</title>
 </head>
 <body>
@@ -22,7 +41,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a class="navbar-brand" href="#">Task List</a>
+          <a class="navbar-brand" href="/about">Task List Tracker</a>
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
               <a class="nav-link" href="/">Home</a>
@@ -49,6 +68,15 @@
         </div>
       </div>
     </nav>
+
     <%- body %> 
+    <br>
+    <br>
+    <div class="footer">
+      Task-List-Tracker^^🤗
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/index.js"></script>
 </body>
 </html>
+

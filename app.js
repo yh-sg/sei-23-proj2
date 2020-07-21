@@ -3,7 +3,8 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const passport = require("./lib/passportConfig");
-const session = require("express-session");
+const session = require("express-session");//must come first
+const MongoStore = require('connect-mongo')(session);
 const flash = require("connect-flash");
 const expressLayouts = require("express-ejs-layouts");
 const checkUser = require("./lib/blockCheck");
@@ -35,6 +36,7 @@ app.use(
     saveUninitialized: true,
     resave: false,
     cookie: { maxAge: 360000 },
+    store: new MongoStore({ url: process.env.MONGODBURL }),
   })
 );
 
@@ -53,6 +55,10 @@ app.use(function (req, res, moveOn) {
 // app.get("/", (req,res) => {
 //     res.send("Hi");
 // });
+
+app.get("/about", (req,res) => {
+  res.render("about");
+})
 
 app.use("/", require("./routes/post.route"));
 app.use("/list", require("./routes/list.route"));

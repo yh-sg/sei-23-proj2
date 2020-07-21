@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const moment = require("moment");
 
 const postSchema = Schema(
   {
@@ -25,6 +26,8 @@ const postSchema = Schema(
       createdDate: {
         type: Date,
         default: Date.now
+        //moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
+        //default: () => moment().format("dddd, MMMM Do YYYY, h:mm:ss a")
       },
       status: {
           type: String,
@@ -37,6 +40,11 @@ const postSchema = Schema(
     },
   }
 );
+
+//this method will be added to the post every time the post was being made
+postSchema.methods.date = function () {
+  return moment(this.createdDate).format("dddd, MMMM Do YYYY, h:mm:ss a");
+};
 
 const Post = mongoose.model("Post", postSchema);
 module.exports = Post;
