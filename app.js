@@ -63,6 +63,12 @@ app.use("/", require("./routes/post.route"));
 app.use("/list", require("./routes/list.route"));
 app.use("/auth", require("./routes/auth.route"));
 
-app.listen(process.env.PORT,()=>{
-    console.log(`app running on ${process.env.PORT}`);
-});
+let port = process.env.PORT;
+if(port == null || port == ""){
+  port = 4000;
+}
+app.listen(port);
+
+// app.listen(process.env.PORT,()=>{
+//     console.log(`app running on ${process.env.PORT}`);
+// });
