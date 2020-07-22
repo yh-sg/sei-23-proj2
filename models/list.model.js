@@ -12,11 +12,6 @@ const listSchema = Schema(
           type: mongoose.Schema.Types.ObjectId,
           ref: "User",
         },
-      // post: [
-      //   {
-      //     type: mongoose.Schema.Types.ObjectId,
-      //     ref: "Post",
-      //   }],
     });
   
   const List = mongoose.model("List", listSchema);

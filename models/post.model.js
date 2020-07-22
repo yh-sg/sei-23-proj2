@@ -8,10 +8,6 @@ const postSchema = Schema(
       type: String,
       require: true
     },
-    name: {
-      type: String,
-      require: true
-    },
     content: {
       type: String,
       require: true
@@ -21,13 +17,11 @@ const postSchema = Schema(
           require: [true, "Please input data priority level"],
           min: 1,
           max: 5,
-          default: 1
+          default: 3
       },
       createdDate: {
         type: Date,
         default: Date.now
-        //moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
-        //default: () => moment().format("dddd, MMMM Do YYYY, h:mm:ss a")
       },
       status: {
           type: String,

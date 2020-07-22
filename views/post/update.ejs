@@ -3,9 +3,13 @@
 <form action="/update/<%=post._id%>" method="post">
   <div class="form-group">
     <label>Title</label>
-    <input class="form-control" type="text" name="title" value="<%=post.title%>">
+    <input class="form-control" type="text" name="title" value="<%=post.title%>" minlength="5">
     <label>Post</label>
-    <textarea class="form-control" name="content" rows="5" cols="30"><%=post.content%></textarea>
+    <textarea class="form-control" name="content" rows="5" cols="30" minlength="30"><%=post.content%></textarea>
+  </div>
+  <div>
+    <label>Priority (1-5)</label>
+    <input class="form-control" type="number" name="priority" value="<%=post.priority%>" min="1" max="5">
   </div>
   <div>
     <label>Status</label>

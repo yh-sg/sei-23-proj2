@@ -20,6 +20,7 @@ p, label{
 
 /************ POST **************/
 /* used bootstrap container ^^ */
+
 #postContent{
   resize: none;
   border-style: none;
@@ -30,12 +31,13 @@ p, label{
 
 li{
   line-height: 1.6;
+  font-family: 'Lobster', cursive;
+  font-size: 1.5rem;
 }
 
 .userName{
-  color: blue !important;
+  color: #007bff !important;
 }
-
 
 /************ LIST **************/
 .heading{
@@ -110,7 +112,7 @@ li{
   }
 
   .footer {
-    padding: 15px 0;
+    padding: 10px 0;
     background-color: #000;
     color: crimson;
     text-align: center;

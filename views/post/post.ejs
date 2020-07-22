@@ -2,10 +2,13 @@
 <h1><%=title%></h1>
 <textarea id="postContent"><%=content%></textarea>
 <p>Written by: <%= writtenBy.name %>  </p>
-<p>Status: <%=status%></p>
+<p>Priority: <strong><em><%=priority%>/5</em></strong></p>
+<p>Status: <strong><em><%=status%></em></strong></p>
 <p><%=date()%></p>
 <% if(currentUser) {%>
-    <a href="/update/<%= _id %>">Update </a>
-    <a href="/remove/<%= _id %>">Delete</a>
+    <a class="btn btn-info" href="/update/<%= _id %>">Update </a>
+    <form method="POST" action="/remove/<%= _id %>?_method=DELETE" style="display: inline">
+        <button class="btn btn-warning" type="submit">Delete</button>
+      </form>
 <% } %>
 </div>

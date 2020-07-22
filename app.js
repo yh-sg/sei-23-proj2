@@ -14,7 +14,7 @@ require("dotenv").config();
 mongoose.Promise = Promise;
 
 mongoose.connect(
-    process.env.MONGODBLIVE,
+    process.env.MONGODBURL,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -63,8 +63,8 @@ app.get("/about", (req,res) => {
   res.render("about");
 })
 
-app.use("/", require("./routes/post.route"));
-app.use("/list", require("./routes/list.route"));
+app.use("/",require("./routes/post.route"));
+app.use("/list", checkUser, require("./routes/list.route"));
 app.use("/auth", require("./routes/auth.route"));
 
 let port = process.env.PORT;

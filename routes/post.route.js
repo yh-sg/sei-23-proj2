@@ -92,8 +92,6 @@ router.post("/update/:id", (req,res)=>{
   })
 });
 
-module.exports = router;
-
 // Delete
 router.delete("/remove/:id", (req,res)=>{
   console.log(req.body);
@@ -106,4 +104,5 @@ router.delete("/remove/:id", (req,res)=>{
       console.log(err);
   });
 });
-/*************** LIST ****************/ 
+
+module.exports = router;
