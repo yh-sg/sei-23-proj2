@@ -11,6 +11,8 @@ const checkUser = require("./lib/blockCheck");
 require("dotenv").config();
 
 //mongoose connection
+mongoose.Promise = Promise;
+
 mongoose.connect(
     process.env.MONGODBLIVE,
     {
@@ -18,11 +20,13 @@ mongoose.connect(
       useUnifiedTopology: true,
       useCreateIndex: true,
       useFindAndModify: false,
-    },
-    () => {
+    })
+    .then(() => {
       console.log("MongoDB connected!");
-    }
-  );
+    })
+    .catch((e)=> {
+      console.log(e);
+    });
 
 app.use(express.static("public")); //look for static files in public folder
 app.use(express.urlencoded({ extended: true })); //collects form data
