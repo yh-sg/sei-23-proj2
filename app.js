@@ -12,7 +12,7 @@ require("dotenv").config();
 
 //mongoose connection
 mongoose.connect(
-    process.env.MONGODBURL,
+    process.env.MONGODBLIVE,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -36,7 +36,6 @@ app.use(
     saveUninitialized: true,
     resave: false,
     cookie: { maxAge: 360000 },
-    store: new MongoStore({ url: process.env.MONGODBURL }),
   })
 );
 

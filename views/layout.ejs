@@ -54,6 +54,9 @@
             </li>
           </ul>
           <% if(currentUser){%>
+            <form class="form-inline my-2 my-lg-0" >
+              <a class="nav-link userName">Welcome <%= currentUser.name %>! </a>
+            </form>
           <form class="form-inline my-2 my-lg-0" >
             <a class="nav-link" href="/auth/logout">Logout</a>
           </form>

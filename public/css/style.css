@@ -28,6 +28,13 @@ p, label{
   padding: 5px;
 }
 
+li{
+  line-height: 1.6;
+}
+
+.userName{
+  color: blue !important;
+}
 
 
 /************ LIST **************/
@@ -55,7 +62,7 @@ p, label{
     min-height: 70px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #F1F1F1;
+    border-bottom: 1px solid rgb(231, 229, 229);
   }
 
   input[type="checkbox"]{
@@ -67,7 +74,7 @@ p, label{
     padding: 20px;
     font-size: 20px;
     font-weight: 200;
-    color: #00204a;
+    color: #001b3f;
   }
 
   .todolist > input[type="text"] {
@@ -104,7 +111,7 @@ p, label{
 
   .footer {
     padding: 15px 0;
-    background-color: black;
+    background-color: #000;
     color: crimson;
     text-align: center;
     letter-spacing: 1.5;

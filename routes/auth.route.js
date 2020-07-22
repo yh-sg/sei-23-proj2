@@ -41,13 +41,13 @@ router.get("/register", (req, res) => {
       successRedirect: "/",
       failureRedirect: "/auth/login",
       failureFlash: "Invalid Email/Password, Please enter correct details",
-      successFlash: "Logged In!"
+      successFlash: "Logged In, Welcome!"
     })
   );
   
   router.get("/logout", (req, res) => {
     req.logout();
-    req.flash("success", "Oh no!!! Don't leave me all alone!!!");
+    req.flash("success", "Hope to see you again!");
     res.redirect("/auth/login");
   });
   
