@@ -41,7 +41,7 @@ router.get("/register", (req, res) => {
       successRedirect: "/",
       failureRedirect: "/auth/login",
       failureFlash: "Invalid Email/Password, Please enter correct details",
-      successFlash: "Logged In, Welcome!"
+      successFlash: `Logged In, Welcome!`
     })
   );
   

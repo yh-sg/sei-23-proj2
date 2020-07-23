@@ -5,10 +5,42 @@
 <p>Priority: <strong><em><%=priority%>/5</em></strong></p>
 <p>Status: <strong><em><%=status%></em></strong></p>
 <p><%=date()%></p>
-<% if(currentUser) {%>
+<hr>
+
+<h3>Comment:</h3>
+<% comment.forEach((element, index) => { %>
+  <p class="commentName comment"><%= element.name.name %></p>
+  <p class="commentDate comment"><%= commentDate(index) %> </p>
+  <p class="comment"><%= element.message %></p>
+  <% if(currentUser){%>
+    <% if(currentUser.name === writtenBy.name){%>
+      <form method="POST" action="/<%= _id %>/removeComment/<%= element._id %>" style="display: inline">
+      <button class="btn btn-danger" type="submit">Remove</button>
+    </form>
+      <% } %>
+    <% } %>
+  <hr>
+<% }); %>
+
+<% if(currentUser){%>
+  <% if(currentUser.name === writtenBy.name){%>
+    <br>
     <a class="btn btn-info" href="/update/<%= _id %>">Update </a>
     <form method="POST" action="/remove/<%= _id %>?_method=DELETE" style="display: inline">
         <button class="btn btn-warning" type="submit">Delete</button>
       </form>
+  <% } %>
 <% } %>
+
+<% if(currentUser){%>
+  <% if(currentUser.name !== writtenBy.name){%>
+    <br>
+    <form method="POST" action="/comment/<%=_id%>">
+      
+      <input class="form-control" placeholder="Add a comment..." type="text" name="comment" minlength="3">
+      <br>
+      <button class="btn btn-success" type="submit">Post</button>
+    </form>
+    <% } %>
+  <% } %>
 </div>

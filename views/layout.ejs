@@ -8,22 +8,12 @@
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>tinymce.init({
-    selector: "#editor",
-    plugins: [
-        "advlist autolink lists link image charmap print preview anchor",
-        "searchreplace visualblocks code fullscreen",
-        "code insertdatetime media table contextmenu paste"
-    ],
-    toolbar: "code insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-	setup: function (editor) {
-	  editor.on('init', function (e) {
-		var x = editor.getContent({format: 'text'})
-		var y = editor.getContent()
-	  });
-	}
+    selector: "",
 });
 </script>
-    <title>Sei Proj 2</title>
+<script src="https://kit.fontawesome.com/234edda5b4.js" crossorigin="anonymous"></script>
+
+    <title>Sei Proj 2: Task List Tracker</title>
 </head>
 <body>
   <% if(alerts.error){%> <% alerts.error.forEach(message => {%>
@@ -43,9 +33,18 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
           <a class="navbar-brand" href="/about">Task-List-Tracker</a>
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <% if(currentUser){%>
+              <li class="nav-item">
+                <a class="nav-link" href="/all">All Post</a>
+              </li>
             <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
+              <a class="nav-link" href="/">My Post</a>
             </li>
+            <% }else { %>
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <% } %>
             <li class="nav-item">
               <a class="nav-link" href="/list">To Do Lists</a>
             </li>
@@ -77,7 +76,13 @@
     <br>
     <div class="footer">
       Ⓒ Task-List-Tracker 
+      &ensp;&ensp;<i class="fab fa-google-play icon"></i>
+      &ensp;&ensp;<i class="far fa-envelope icon"></i> 
+      &ensp;&ensp;<i class="far fa-list-alt"></i> 
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/js/index.js"></script>
 </body>

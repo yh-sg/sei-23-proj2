@@ -19,7 +19,7 @@ p, label{
 
 
 /************ POST **************/
-/* used bootstrap container ^^ */
+/* used bootstrap container =) */
 
 #postContent{
   resize: none;
@@ -38,6 +38,24 @@ li{
 .userName{
   color: #007bff !important;
 }
+
+.comment{
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0;
+}
+
+.commentName{
+  font-weight: bold;
+}
+
+.commentDate{
+  color: #999999;
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+
 
 /************ LIST **************/
 .heading{
@@ -113,6 +131,7 @@ li{
 
   .footer {
     padding: 10px 0;
+    font-weight: bold;
     background-color: #000;
     color: crimson;
     text-align: center;

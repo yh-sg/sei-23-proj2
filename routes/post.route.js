@@ -25,6 +25,15 @@ router.get("/", async (req, res) => {
     }
   });
 
+  router.get("/all", async (req, res) => {
+    try{
+      let posts = await Post.find();
+      
+      res.render("post/home", {posts});
+    } catch(error){
+      console.log(error);
+    }
+  });
 
 router.get("/compose", (req,res)=>{
   if(req.user){
@@ -57,11 +66,46 @@ router.post("/compose", async (req,res)=>{
     }
   });
 
+  //COMMENT SECTION
+  router.post("/comment/:id", async (req,res)=>{  
+    try {
+      console.log(req.body.comment);
+      let commentContent = req.body.comment;
+
+      let update = await 
+      Post.findByIdAndUpdate(
+      req.params.id, 
+      { $push: {"comment": {message:commentContent, name: req.user._id}}});
+
+      if (update) {
+        return res.redirect("/");
+      }
+      }catch (error) {
+        console.log(error);
+      }
+    });
+
+    router.post("/:postid/removeComment/:id", async (req,res)=>{  
+      try {
+        let remove = await 
+        Post.findByIdAndUpdate(
+        req.params.postid, 
+        { $pull: {"comment": {_id: req.params.id}}});
+  
+        if (remove) {
+          return res.redirect(`/`);
+        }
+        }catch (error) {
+          console.log(error);
+        }
+      });
+
   //Read  
   router.get("/posts/:id", (req,res)=>{
 
     Post.findById(req.params.id)
     .populate("writtenBy")
+    .populate("comment.name")
     .then((post) => {
         res.render("post/post", post);
     })

@@ -1,4 +1,5 @@
-// //alert("hi, you called for js?")
+
+// //alert("hi, you called for js? js is online")
 
 //scrollHeight property returns the entire height of an element in pixels, including padding, but not the border, scrollbar or margin.
 $("#postContent").height($("textarea")[0].scrollHeight);

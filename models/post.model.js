@@ -32,12 +32,28 @@ const postSchema = Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
+    comment: [{
+      name:
+      {
+      type: mongoose.Schema.Types.ObjectId, 
+      ref: "User",
+      },
+      message: String,
+      messageDate: {
+        type: Date, 
+        default: Date.now
+    }
+    }]
   }
 );
 
 //this method will be added to the post every time the post was being made
 postSchema.methods.date = function () {
-  return moment(this.createdDate).format("dddd, MMMM Do YYYY, h:mm:ss a");
+  return moment(this.createdDate).format("dddd, MMMM Do YYYY, h:mm:ss A");
+};
+
+postSchema.methods.commentDate = function (index) {
+ return moment(this.comment[index].messageDate).fromNow();
 };
 
 const Post = mongoose.model("Post", postSchema);

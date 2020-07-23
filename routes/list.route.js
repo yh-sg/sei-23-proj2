@@ -8,7 +8,6 @@ router.get("/", async (req, res) => {
       if(req.user){
       let lists = await List.find({toDoBy : req.user._id});
   
-      // console.log(lists);
       res.render("list/list",{lists});
     }else{
       res.redirect("/auth/login");
@@ -35,7 +34,6 @@ router.post("/delete", (req,res)=>{
   
   List.findByIdAndRemove(checkedItemId, (err)=>{
     if(!err){
-      //console.log("Successfully deleted checked items.");
       res.redirect("/list");
     }
   });
