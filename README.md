@@ -1,7 +1,7 @@
 # SEI 23 (Project 2 - Task List Tracker): https://guarded-hamlet-21547.herokuapp.com/
 
 ## Description:
-Most people will mix-up the priority on what things to do. The purpose of this app is to allow users post their task which can be shared with friends for accountability. With a to-do-list, the User could check on the progress of the task shared with friends and continue. Friends could leave comments to check in with their friend and remind/encourage the user of their task/goals.
+Sometimes, people will mix-up the priorities on what task to do. The purpose of this app is to allow users post their task which can be shared with friends for accountability. With a to-do-list, the User could check on the progress of the task shared with friends and continue. Friends could leave comments to check in with their friend and remind/encourage the user of their task/goals.
 
 ## Minimum functionality:
 - [x] View Post, Create Post, Update Post and Delete Post
