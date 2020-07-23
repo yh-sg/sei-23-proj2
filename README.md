@@ -16,18 +16,18 @@ Sometimes, people will mix-up the priorities on what task to do. The purpose of 
 - Private to-do-list for the users.
 
 ## Technologies Used:
-Javascript
-Node.js
-jquery
-HTML
-EJS
-CSS
-Bootstrap
-Heroku
-Mongoose
-MongoDB
-Express
-Passport
+- Javascript
+- Node.js
+- jquery
+- HTML
+- EJS
+- CSS
+- Bootstrap
+- Heroku
+- Mongoose
+- MongoDB
+- Express
+- Passport
 
 ## Wireframes
 
