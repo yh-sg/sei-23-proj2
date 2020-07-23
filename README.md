@@ -15,6 +15,20 @@ Most people will mix-up the priority on what things to do. The purpose of this a
 - Allows only users to edit/delete, while public could only view on the posts
 - Private to-do-list for the users.
 
+## Technologies Used:
+Javascript
+Node.js
+jquery
+HTML
+EJS
+CSS
+Bootstrap
+Heroku
+Mongoose
+MongoDB
+Express
+Passport
+
 ## Wireframes
 
 ___
@@ -36,3 +50,7 @@ ___
 ***
 
 <img width="709" alt="Screenshot 2020-07-22 at 4 15 46 PM" src="https://user-images.githubusercontent.com/61861009/88275877-ae8f0200-cd10-11ea-875f-7d2769e5b499.png">
+
+***
+
+<img width="699" alt="Screenshot 2020-07-22 at 4 15 58 PM" src="https://user-images.githubusercontent.com/61861009/88288330-33384b00-cd26-11ea-833b-6eb5e087422c.png">
