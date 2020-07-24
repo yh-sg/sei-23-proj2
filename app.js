@@ -14,7 +14,7 @@ require("dotenv").config();
 mongoose.Promise = Promise;
 
 mongoose.connect(
-    process.env.MONGODBLIVE,
+    process.env.MONGODBURL,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
